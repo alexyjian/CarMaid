@@ -19,13 +19,13 @@ window.addEventListener("swiperight", function(e) {
 		//获得主页面的webview
 		var main = plus.webview.currentWebview().parent();
 		//触发主页面的openMenu事件
-		mui.fire(main, 'openMenu');
+		mui.fire(main, 'menu:open');
 	}
 });
 //主界面向左滑动，若菜单已显示，则关闭菜单；否则，不做任何操作；
-window.addEventListener("swipeleft", function() {
+window.addEventListener("swipeleft", function(e) {
 	//获得主页面的webview
 	var main = plus.webview.currentWebview().parent();
 	//触发主页面的closeMenu事件
-	mui.fire(main, 'closeMenu');
+	mui.fire(main, 'menu:close');
 });
