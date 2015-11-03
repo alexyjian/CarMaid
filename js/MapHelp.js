@@ -1,4 +1,5 @@
 
+
 var MapHelp = new Object();
 
 MapHelp.geoInf = function  (position) {
