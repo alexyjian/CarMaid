@@ -40,6 +40,7 @@
 			</nav>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script src="js/MapHelp.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 			var subpages = ['templates/Home/index.html', 'templates/Search/index.html',
@@ -104,6 +105,8 @@
 			var initTemplates = function() {
 				getTemplate('default', 'template.html');
 			};
+
+
 			mui.plusReady(function() {
 				// 判断是否加载欢迎页
 				//读取本地存储，检查是否为首次启动
@@ -157,6 +160,7 @@
 						}
 					});
 				}, 200);
+				MapHelp.getPosByBaidu(MapHelp.geoInf);
 			});
 			 //当前激活选项
 			var activeTab = subpages[0];
@@ -245,7 +249,6 @@
 					}, 300);
 				}
 			};
-
 			 //点击左上角侧滑图标，打开侧滑菜单；
 			document.querySelector('.mui-icon-bars').addEventListener('tap', function(e) {
 				if (showMenu) {
@@ -267,9 +270,9 @@
 			});
 			 //oldPage.addEventListener("swiperight",openMenu);
 			 //主界面向左滑动，若菜单已显示，则关闭菜单；否则，不做任何操作；
-			window.addEventListener("swipeleft",function(e){
+			window.addEventListener("swipeleft", function(e) {
 				console.log(e.detail.angle);
-				closeMenu();	
+				closeMenu();
 			});
 			 //侧滑菜单触发关闭菜单命令
 			window.addEventListener("menu:close", closeMenu);
@@ -303,7 +306,6 @@
 					}
 				}
 			};
-			
 		</script>
 	</body>
 
